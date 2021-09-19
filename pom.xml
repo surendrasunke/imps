@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>it.tidalwave.northernwind</groupId>
+        <artifactId>northernwind-site-archetypes-superpom</artifactId>
+        <version>1.4</version>
+    </parent>
+
+    <groupId>hdfc</groupId>
+    <artifactId>impstransfer</artifactId>
+    <version>1.0-SNAPSHOT</version>
+    <packaging>pom</packaging>
+    <name>hdfc - website</name>
+   
+    <properties>
+        <!-- nw.version>1.0-ALPHA-16</nw.version-->
+        <nw.beans>LayeredFileSystem, SiteResetOnChangeDetect, HeaderLanguageOverride, ParameterLanguageOverride, HtmlCleanupFilter</nw.beans>
+        <nw.site.locales>en</nw.site.locales>
+    </properties>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.mortbay.jetty</groupId>
+                <artifactId>maven-jetty-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <id>start-jetty</id>
+                        <phase>initialize</phase>
+                        <goals>
+                            <goal>deploy-war</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build> 
+</project>
